@@ -1,0 +1,324 @@
+.menu-bar {
+    -fx-background-color: #AA2C1B ;
+    -fx-background-radius: 8px;
+}
+.menu-bar .label {
+    -fx-font-size: 12.0 pt;
+    -fx-font-family: "Bookman Old Style";
+    -fx-text-fill: #551D0C;
+    -fx-font-weight: bold; 
+    -fx-cursor: hand;
+    -fx-padding: 6.0px;
+}
+.menu-bar .menu-button:hover, .menu-bar .menu-button:focused, .menu-bar .menu-button:showing {
+    -fx-background: black ;
+    -fx-background-radius: 8px;
+    -fx-opacity: 0.5;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+.menu-item {
+    -fx-text-fill: black;
+    -fx-background: #F2D43D ;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+}
+.menu-item .label{
+    -fx-font-size: 12.0 pt;
+    -fx-text-fill: #782901;
+    -fx-cursor: hand;
+}
+.menu-item .label:hover{
+    -fx-font-size: 12.0 pt;
+    -fx-background: black ;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #F2D43D;
+    -fx-cursor: hand;
+}
+.context-menu {
+    -fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";
+    -fx-background-color:white ;
+    -fx-border-width: 0.2px;
+    -fx-border-color: black;
+    -fx-background-radius: 8px;
+}
+.anchor-pane{
+    -fx-background-color: #F2B33D;
+}
+.label{
+    -fx-font-size: 32;
+    -fx-text-fill: #612B0D;
+    -fx-font-family: "Bookman Old Style";
+}
+.label2{
+    -fx-font-size: 14;
+    -fx-text-fill: #612B0D;
+    -fx-font-family: "Arial Black";
+}
+.label1{
+    -fx-font-size: 18;
+    -fx-text-fill: #fbe74e;
+    -fx-font-family: "Arial Black";
+}
+.label3{
+    -fx-font-size: 18;
+    -fx-text-fill: #612B0D;
+    -fx-font-family: "Bookman Old Style";
+}
+.button{
+    -fx-background-radius: 8px;
+    -fx-background-color:  #8dad4c;
+    -fx-text-fill: #96461f;
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 22;
+    -fx-cursor: hand;
+}
+.button:hover, .buttton:showing {
+    -fx-background-radius: 8px;
+    -fx-background-color:  gray;
+    -fx-opacity: 0.8;
+    -fx-text-fill: #96461f;
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 22;
+    -fx-cursor: hand;
+}
+.button1{
+    -fx-background-radius: 8px;
+    -fx-background-color:   #fbe74e;
+    -fx-text-fill: #96461f;
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 15;
+    -fx-cursor: hand;
+}
+.button1:hover, .buttton1:showing {
+    -fx-background-radius: 8px;
+    -fx-background-color:  gray;
+    -fx-opacity: 0.8;
+    -fx-text-fill: #96461f;
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 15;
+    -fx-cursor: hand;
+}
+.button2{
+    -fx-background-radius: 8px;
+    -fx-background-color:   #96461f;
+    -fx-text-fill: #fbe74e;
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 18;
+    -fx-cursor: hand;
+}
+.button2:hover, .buttton:showing {
+    -fx-background-radius: 8px;
+    -fx-background-color:  #E66C30;
+    -fx-opacity: 0.8;
+    -fx-text-fill: #fbe74e;
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 18;
+    -fx-cursor: hand;
+}
+.table-view .column-header .label{
+    -fx-text-fill: #612B0D;
+    -fx-font-size: 14; 
+    -fx-alignment: center;
+    -fx-font-family: "Arial Black";
+}
+.table-view {
+    -fx-base:  #fbe74e;
+    -fx-background-color:  #fbe74e;
+}
+.table-view .label {
+    -fx-text-fill: #612B0D;
+    -fx-font-size: 17; 
+    -fx-alignment: center;
+    -fx-font-family: "Arial";
+}
+.table-cell{
+    -fx-text-fill: #612B0D;
+    -fx-font-size: 17; 
+    -fx-alignment: center;
+    -fx-font-family: "Arial"; 
+}
+.table-cell:hover{
+    -fx-background-color: gray;
+    -fx-text-fill: #612B0D;
+    -fx-font-size: 17; 
+    -fx-alignment: center;
+    -fx-font-family: "Arial"; 
+}
+.root
+{
+    /*-fx-base: dodgerblue; */
+}
+
+.datepicker-invalid
+{
+    -fx-border-color: red;
+}
+
+.datepicker-valid
+{
+    -fx-border-color: null;
+}
+
+/* The main calendar pane */
+.calendar {
+    -fx-text-fill: #96461f;
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 0.8em;
+}
+
+/* The calendar header, which contains the navigation elements. */
+.calendar-header
+{
+    -fx-background-color: linear-gradient(to bottom, derive(-fx-base,-70%), derive(-fx-base,-90%));
+    -fx-padding: 0.5em;
+    -fx-text-fill: #96461f;
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 0.8em;
+    
+   /* -fx-background-radius: 10;*/
+}
+
+/* The calendar footer, which contains the today button. It is only visible when the today button is shown */
+.calendar-footer
+{
+    -fx-background-color: linear-gradient(to top, derive(-fx-base,-70%), derive(-fx-base,-90%));
+    -fx-padding: 0.2em;
+    -fx-text-fill: #96461f;
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 0.8em;
+    
+}
+
+
+/* The 3 different panes, which show the month, the year, and the decades */
+.calendar-month-view, .calendar-year-view, .calendar-decades-view
+{
+    -fx-background-color: linear-gradient(to bottom, derive(-fx-base,80%), derive(-fx-base,40%));
+    -fx-padding: 0;
+    -fx-text-fill: #96461f;
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 0.8em;
+    
+}
+
+/* The usual button which either display the day of the current month, or the month in the year view, or the year in the decades view */
+.calendar-cell-current-month, .calendar-year-button, .calendar-month-button {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0, 0, 0, 0;
+    -fx-cursor: hand;
+    -fx-padding: 0.7em;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-text-fill: #96461f;
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 0.8em;
+}
+.calendar-cell-current-month:hover, .calendar-year-button:hover, .calendar-month-button:hover {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0, 0, 0, 0;
+    -fx-cursor: hand;
+    -fx-padding: 0.7em;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-text-fill: #96461f;
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 0.8em;
+}
+
+/* The hover state of the buttons */
+.calendar-cell-current-month:hover, .calendar-year-button:hover, .calendar-month-button:hover {
+    -fx-background-color: -fx-cell-hover-color;
+    fx-padding: 0.2em;
+    -fx-text-fill: #96461f;
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 0.8em;
+}
+
+/* The day buttons for the previous and next month. */
+.calendar-cell-other-month {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0, 0, 0, 0;
+    -fx-opacity: 0.7;
+    -fx-cursor: hand;
+    -fx-padding: 0.7em;
+    -fx-background-radius: 8;
+    -fx-text-fill: #96461f;
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 0.8em;
+}
+
+/* The hover state of this button. */
+.calendar-cell-other-month:hover {
+    -fx-background-color: -fx-cell-hover-color;
+    -fx-text-fill: #96461f;
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 0.8em;
+}
+
+/* The button which shows the current day. */
+.calendar-cell-today {
+     -fx-background-color: -fx-accent;
+     -fx-text-fill: #96461f;
+     -fx-font-family: "Bookman Old Style";
+     -fx-font-size: 0.8em;
+     
+}
+
+/* The buttons in the header and the footer */
+.calendar-navigation-button, .calendar-navigation-title, .calendar-today-button {
+    -fx-background-color: null;
+    -fx-cursor: hand;
+    -fx-text-fill: white;
+     -fx-text-fill: #96461f;
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 0.8em;
+}
+.calendar-navigation-button:hover, .calendar-navigation-title:hover, .calendar-today-button:hover{
+    -fx-background-color: null;
+    -fx-cursor: hand;
+    -fx-text-fill: white;
+     -fx-text-fill: #96461f;
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 0.8em;
+}
+
+/* don't make the title button transparent, when it is disabled in the decades view */
+.calendar-navigation-title:disabled {
+    -fx-opacity: 1;
+    -fx-text-fill: #96461f;
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 0.8em;
+}
+
+/* The arrow for navigation. SVG is used for it. */
+.calendar-navigation-arrow {
+    /*padding determines the size of the arrow; This should match the design size in the SVG */
+    -fx-padding: 4 3.5 4 3.5;
+    -fx-padding: 0.333333em 0.333333em 0.333333em 0.333333em; /* 2 3.5 2 3.5 */
+    -fx-shape: "M 100 100 L 300 100 L 200 300 z";
+    -fx-background-color: #ffffff;
+     -fx-text-fill: #96461f;
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 0.8em;
+}
+
+/* The cell which contain the week day names */
+.calendar-weekdays {
+    -fx-background-color: -fx-body-color;
+    -fx-padding: 3px;
+    -fx-text-fill: #96461f;
+    -fx-font-family: "Bookman Old Style";
+    -fx-font-size: 0.8em;
+}
+
+.calendar-week-number {
+    -fx-font-size: 0.8em;
+    -fx-padding: 4px;
+    -fx-text-fill: #96461f;
+    -fx-font-family: "Bookman Old Style";
+}

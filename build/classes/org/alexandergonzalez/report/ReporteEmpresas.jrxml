@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteEmpresas" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="da128c0d-abf8-4eda-98a6-2fc65cff99c6">
+	<property name="ireport.zoom" value="1.3310000000000033"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="imagenLogo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[call sp_ListarEmpresas;]]>
+	</queryString>
+	<field name="codigoEmpresa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreEmpresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<pageHeader>
+		<band height="122" splitType="Stretch">
+			<rectangle>
+				<reportElement x="137" y="45" width="321" height="20" forecolor="#8DAD4C" backcolor="#8DAD4C" uuid="06717ed5-ae4d-4063-aa58-fe0d44d20858"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="202" y="28" width="185" height="54" forecolor="#FBE74E" backcolor="#FBE74E" uuid="6dec71f8-db6e-4b7e-b76d-bb37610c9fe9"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="202" y="28" width="185" height="54" forecolor="#96461F" uuid="bba276cc-457c-41da-a327-0489b65050b8"/>
+				<textElement>
+					<font fontName="Bookman Old Style" size="36"/>
+				</textElement>
+				<text><![CDATA[Empresas]]></text>
+			</staticText>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="21" y="3" width="82" height="104" uuid="f3053177-d6cd-48f1-ba02-d938897ad82e"/>
+				<imageExpression><![CDATA[$P{imagenLogo}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<rectangle>
+				<reportElement x="21" y="1" width="542" height="31" forecolor="#000000" backcolor="#FBE74E" uuid="6e791ad1-d803-4011-8150-8b5bfa17669b"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="34" y="1" width="69" height="20" uuid="aa252b92-2576-4b0a-a57c-c31e6996a1a1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bookman Old Style" size="14"/>
+				</textElement>
+				<text><![CDATA[Código Empresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="1" width="126" height="20" uuid="ddc40168-7fac-483d-b8a8-267d967cf639"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bookman Old Style" size="14"/>
+				</textElement>
+				<text><![CDATA[Empresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="1" width="125" height="20" uuid="431cf039-ff26-4ff6-897a-bce475cf2b60"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bookman Old Style" size="14"/>
+				</textElement>
+				<text><![CDATA[Dirección]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="476" y="1" width="77" height="20" uuid="aa73d874-e58d-436a-b6ce-f3ab433c0946"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bookman Old Style" size="14"/>
+				</textElement>
+				<text><![CDATA[Teléfono]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="51" splitType="Stretch">
+			<textField>
+				<reportElement x="34" y="12" width="69" height="20" uuid="529aa970-bb47-48ef-bd9a-98dd22cd7318"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bookman Old Style" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="12" width="126" height="20" uuid="0c8fe43b-e386-4e8a-a89c-ff2294aea27a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bookman Old Style" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="291" y="12" width="167" height="39" uuid="93f43f4a-ba77-4f8d-8651-b03b95a17a91"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bookman Old Style" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="476" y="12" width="77" height="20" uuid="1d51c339-9f09-4d9b-8183-d259bd542989"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bookman Old Style" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="21" y="50" width="542" height="1" uuid="9d50a5e1-b461-459f-ace0-085788a1d4b4"/>
+			</line>
+			<line>
+				<reportElement x="118" y="0" width="1" height="50" uuid="48419735-66ab-45fe-b761-23e572c6d66f"/>
+			</line>
+			<line>
+				<reportElement x="20" y="1" width="1" height="50" uuid="535c7619-5f70-4f1e-b428-14a681e746e7"/>
+			</line>
+			<line>
+				<reportElement x="279" y="1" width="1" height="50" uuid="5d3749de-6d77-45fa-aeae-429c023ea46b"/>
+			</line>
+			<line>
+				<reportElement x="457" y="0" width="1" height="50" uuid="f9c4eaaf-703f-4446-b59c-102c10fd3811"/>
+			</line>
+			<line>
+				<reportElement x="563" y="1" width="1" height="50" uuid="b3ffdd29-fc51-4018-8f8b-0a2d441f367e"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="14" width="572" height="26" forecolor="#8DAD4C" backcolor="#8DAD4C" uuid="e4161be9-cd00-4e6a-b11e-a29821cb877d"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="115" y="14" width="342" height="26" forecolor="#000000" uuid="ee5d6efc-baa6-4a6d-80cb-35cca93a4e41"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Bookman Old Style" size="16"/>
+				</textElement>
+				<text><![CDATA[Repartiendo el mejor sabor en todas partes]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

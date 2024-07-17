@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteGeneral" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b0ad61c7-7467-45b1-abf1-7ae3c7dd57f1">
+	<property name="ireport.zoom" value="0.7320500000000003"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="108"/>
+	<parameter name="codEmpresa" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Informatica\\Desktop\\TonysKinal2019065\\src\\org\\alexandergonzalez\\report\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="subReporteFinal" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagenLogo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select E.nombreEmpresa, E.telefono, E.direccion, EM.nombresEmpleado, EM.telefonoContacto, TE.descripcion, S.tipoServicio, S.fechaServicio, S.lugarServicio
+	From Empresas E
+		Inner join Servicios S on S.codigoEmpresa = E.codigoEmpresa
+		Inner join Servicios_has_Empleados SE on SE.codigoServicio = S.codigoServicio
+		Inner join Empleados EM on EM.codigoEmpleado = SE.codigoEmpleado
+        Inner join TipoEmpleado TE on TE.codigoTipoEmpleado = EM.codigoTipoEmpleado
+        where e.codigoEmpresa  = $P{codEmpresa}
+        group by SE.Servicios_codigoEmpleados;]]>
+	</queryString>
+	<field name="nombreEmpresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombresEmpleado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoContacto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipoServicio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaServicio" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lugarServicio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<pageHeader>
+		<band height="321" splitType="Stretch">
+			<staticText>
+				<reportElement x="32" y="114" width="100" height="20" uuid="51408eb1-4bf4-4deb-9755-ceec4c288f35"/>
+				<textElement textAlignment="Center">
+					<font fontName="Bookman Old Style" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Empresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="212" y="114" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="8c4c1282-8b07-4a85-a3a5-eb6181572c2e"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Contacto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="429" y="114" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="21f63480-80b7-42e3-8a30-00419c5e4461"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Ubicación]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Transparent" x="32" y="147" width="100" height="43" forecolor="#000000" backcolor="#FFFFFF" uuid="0a384b02-ee7d-4f76-bf87-fde0d9897aa0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="212" y="147" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="abd7a00c-637c-4218-9d20-0dbe6726e832"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="429" y="147" width="100" height="43" forecolor="#000000" backcolor="#FFFFFF" uuid="c50e8e5c-892a-4fd9-9dea-3d234aa61e2f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="22" y="214" width="507" height="100" uuid="266d3c3a-1f00-472a-aeb3-0e080281a34c"/>
+				<subreportParameter name="codEmpresa">
+					<subreportParameterExpression><![CDATA[$P{codEmpresa}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{subReporteFinal} + "SubReporteFinal.jasper"]]></subreportExpression>
+			</subreport>
+			<rectangle>
+				<reportElement x="118" y="36" width="335" height="20" forecolor="#8DAD4C" backcolor="#8DAD4C" uuid="098c3909-227f-43dd-8fc1-a735d98d11d2"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="146" y="19" width="281" height="54" forecolor="#FBE74E" backcolor="#FBE74E" uuid="9a4e290b-20ca-46ac-955a-8151298b6bae"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="146" y="19" width="280" height="54" forecolor="#96461F" uuid="3e6cc482-9ecd-4f99-b122-5edf90dfd97c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bookman Old Style" size="36"/>
+				</textElement>
+				<text><![CDATA[Reporte Final]]></text>
+			</staticText>
+			<image>
+				<reportElement x="22" y="0" width="89" height="93" uuid="8e33fd35-258e-4e80-b47c-915e29812529"/>
+				<imageExpression><![CDATA[$P{imagenLogo}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="14" width="572" height="47" backcolor="#FBE74E" uuid="3703d7f5-20e2-4bfe-a7b2-dd88d164bf93"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="5" y="20" width="91" height="33" forecolor="#000000" backcolor="#FFFFFF" uuid="95ac23e8-692b-4d21-acf6-dcccf2b4308a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Nombres de Empleado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="110" y="27" width="72" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="30057fb8-b1ad-4eca-b864-9cb1cc02a378"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Contacto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="196" y="27" width="83" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="629eb1e6-12d2-4039-bcf2-4546899291a7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Puesto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="290" y="13" width="82" height="48" forecolor="#000000" backcolor="#FFFFFF" uuid="21c4384a-3883-4df4-8003-24a74ea6c782"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Tipo de Servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="392" y="21" width="61" height="32" forecolor="#000000" backcolor="#FFFFFF" uuid="b377d836-a562-480f-8579-0b6e23bb06f5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Fecha de Servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="474" y="20" width="87" height="32" forecolor="#000000" backcolor="#FFFFFF" uuid="31e7f00c-e8f0-461b-b052-c616fd9e52a1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Ubicación de Servicio]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="54" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="1" height="54" uuid="d36e65d6-85af-4596-a256-2c33ef89da96"/>
+			</line>
+			<line>
+				<reportElement x="102" y="0" width="1" height="54" uuid="5910de0e-cf55-4553-9e94-1d5ea8402516"/>
+			</line>
+			<line>
+				<reportElement x="188" y="0" width="1" height="54" uuid="22a534c2-fb3b-423e-bbb4-1b927fae867d"/>
+			</line>
+			<line>
+				<reportElement x="284" y="0" width="1" height="54" uuid="33f50658-36cd-414c-bb92-1429c6aa9f36"/>
+			</line>
+			<line>
+				<reportElement x="378" y="0" width="1" height="54" uuid="0c0b46e1-3fb2-4746-a9e3-5c321123cef3"/>
+			</line>
+			<line>
+				<reportElement x="460" y="0" width="1" height="54" uuid="44954971-902f-494f-b68c-71d3359c1e95"/>
+			</line>
+			<line>
+				<reportElement x="571" y="0" width="1" height="54" uuid="fe327c08-abf3-446f-9b0a-28edd80ed32b"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="53" width="572" height="1" uuid="7b0d63d9-806c-4f9c-bc27-c8480c275495"/>
+			</line>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="8" y="4" width="89" height="44" forecolor="#000000" backcolor="#FFFFFF" uuid="c02ddf69-ca97-4db1-a840-8e5c99f21ec8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombresEmpleado}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="196" y="17" width="83" height="23" forecolor="#000000" backcolor="#FFFFFF" uuid="5f59a9b4-cc6d-4a92-87cd-1ac4c2d24023"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="110" y="17" width="72" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="c3c46681-a9d3-4d43-afda-41dad868ab81"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefonoContacto}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="290" y="17" width="82" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="5a2b3d6b-0d38-4fed-8820-489023f5038d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipoServicio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="392" y="17" width="61" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="4b79f1e9-2b2d-4a42-be71-0d2ab9ceb140"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaServicio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="474" y="4" width="87" height="42" forecolor="#000000" backcolor="#FFFFFF" uuid="2d7ceafe-242d-471a-b6f1-8968f3204d46"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lugarServicio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="295" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-1" y="258" width="572" height="26" forecolor="#8DAD4C" backcolor="#8DAD4C" uuid="5c5fdbe5-6ba6-42ef-87f0-8753e4c1adf6"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="113" y="257" width="346" height="27" forecolor="#000000" uuid="03c330c5-24ce-4c1d-89c7-4b2e7590bb85"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Bookman Old Style" size="16"/>
+				</textElement>
+				<text><![CDATA[Repartiendo el mejor sabor en todas partes]]></text>
+			</staticText>
+			<subreport>
+				<reportElement mode="Transparent" x="22" y="15" width="507" height="63" isPrintWhenDetailOverflows="true" forecolor="#000000" backcolor="#FFFFFF" uuid="c856e837-8572-49e8-8e9a-6944a1ac2d30"/>
+				<subreportParameter name="codEmpresa">
+					<subreportParameterExpression><![CDATA[$P{codEmpresa}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{subReporteFinal} + "SubreporteFinal2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageFooter>
+</jasperReport>

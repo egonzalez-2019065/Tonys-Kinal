@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="700.0" stylesheets="@../resource/TonysKinal.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.alexandergonzalez.controller.MenuPrincipalController">
+   <children>
+      <ImageView fitHeight="210.0" fitWidth="700.0" opacity="0.76" pickOnBounds="true">
+         <image>
+            <Image url="@../image/fondoMenu.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="196.0" fitWidth="184.0" layoutX="515.0" pickOnBounds="true">
+         <image>
+            <Image url="@../image/Logo.png" />
+         </image>
+      </ImageView>
+      <MenuBar prefHeight="36.0" prefWidth="248.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Módulos">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ventanaEmpresas" text="Empresas" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaProductos" text="Productos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaTipoEmpleado" text="Tipo de Empleado" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaTipoPlato" text="Tipo de Plato" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Reportes">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ventanaServiciosEmpleados" text="Servicios y sus Empleados" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaServiciosPlatos" text="Servicios y sus Platos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaProductosPlatos" text="Platos y sus Productos" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="?">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ventanaProgramador" text="Programador" />
+            </items>
+          </Menu>
+        </menus>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </MenuBar>
+      <Pane layoutY="205.0" prefHeight="324.0" prefWidth="700.0" style="-fx-background-color: #fbe74e;">
+         <children>
+            <Label layoutX="55.0" layoutY="52.0" stylesheets="@../resource/TonysKinal.css" text="Misión: " />
+            <Label layoutX="117.0" layoutY="111.0" styleClass="label3" stylesheets="@../resource/TonysKinal.css" text="Repartir el mejor sabor de nuestra cocina en todo el país. " />
+            <Label layoutX="55.0" layoutY="169.0" stylesheets="@../resource/TonysKinal.css" text="Visión:" />
+            <Label layoutX="117.0" layoutY="227.0" prefHeight="21.0" prefWidth="510.0" styleClass="label3" stylesheets="@../resource/TonysKinal.css" text="Llegar a ser una gran cadena de banquetes para poder  " />
+            <Label layoutX="117.0" layoutY="259.0" prefHeight="21.0" prefWidth="510.0" styleClass="label3" stylesheets="@../resource/TonysKinal.css" text="brindar servicios en todas las partes del país." />
+         </children></Pane>
+   </children>
+</AnchorPane>

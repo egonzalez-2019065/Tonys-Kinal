@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SubreporteFinal2" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6fe2b5f2-89b5-4a13-a79b-bf70c07decd9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codEmpresa" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select PL.nombrePlato, PL.cantidadPlato, PR.nombreProducto, PR.cantidad
+	From Empresas E
+		Inner join Servicios S on S.codigoEmpresa = E.codigoEmpresa
+		Inner join Servicios_has_Platos SE on SE.codigoServicio = S.codigoServicio
+        Inner join Platos PL on PL.codigoPLato = SE.codigoPlato
+		Inner join Productos_has_Platos PP on PP.codigoPlato = PL.codigoPlato
+		Inner join Productos PR on PR.codigoProducto = PP.codigoProducto
+        where e.codigoEmpresa  = $P{codEmpresa}
+        group by PP.Productos_CodigoProducto;]]>
+	</queryString>
+	<field name="nombrePlato" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidadPlato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreProducto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="500" height="30" backcolor="#FBE74E" uuid="ad1a8a44-c5ab-4a7c-a7b0-bbb3cd879af5"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Transparent" x="12" y="5" width="80" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="dfc912bc-6187-4f37-81a9-11a924f7dde5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Platos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="124" y="5" width="67" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="8b530738-bd14-49b6-8d32-9df5ca89937a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="220" y="5" width="176" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="a8c5e13a-fe53-4927-93f9-9d72f5acc1b8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Productos/Ingredientes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="423" y="5" width="67" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="5deb5cee-2602-4568-965f-d7d5bfbb3f45"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="12" y="3" width="80" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="26828ae2-697f-4393-9a2a-7644160a798c"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombrePlato}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="124" y="3" width="67" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="dcf3c2dd-dcae-4930-b5a2-3c43f3c6bc4b"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantidadPlato}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="423" y="3" width="67" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="2cd64645-9a41-46a3-a190-c9c997cd9b03"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="220" y="3" width="176" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="1a4f5402-c425-40d4-b0b2-610430aeb269"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Bookman Old Style" size="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreProducto}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="26" width="500" height="1" uuid="03d0edc9-fb5f-4af3-b43e-d54d6c2ca622"/>
+			</line>
+			<line>
+				<reportElement x="500" y="0" width="1" height="26" uuid="c3627377-96a2-4bbd-be56-5344a6811718"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="26" uuid="3baf5baf-b22f-4631-a7c0-d53557247e89"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>
